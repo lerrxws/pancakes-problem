@@ -16,15 +16,14 @@ Metrics to compare:
 
 ### 1. **Input Setup**
 - [ ] Allow the user to define an initial pancake stack (e.g., `[4, 3, 2, 1]` or randomly generated).
-- [ ] Implement a function to verify if a stack is sorted.
+- [x] Implement a function to verify if a stack is sorted.
 
 ---
 
 ### 2. **Search Algorithms**
 
 #### 2.1 Uniform Cost Search (UCS)
-- [ ] Implement UCS for the pancake sorting problem.
-- [ ] Heuristics
+- [x] Implement UCS for the pancake sorting problem.
 - [ ] Metrics and Evaluation
 
 #### 2.2 A* Search
@@ -33,16 +32,16 @@ Metrics to compare:
 - [ ] Metrics and Evaluation
 
 #### 2.3 Greedy Search
-- [ ] Implement Greedy search for the pancake sorting problem.
-- [ ] Heuristics
+- [x] Implement Greedy search for the pancake sorting problem.
+- [x] Heuristics
 - [ ] Metrics and Evaluation
 
 ---
 
 ### 3. **Heuristics**
-- [ ] Gap Heuristic
-- [ ] Out-of-Place Heuristic
-- [ ] Total Distance Heuristic
+- [x] Gap Heuristic
+- [x] Out-of-Place Heuristic
+- [x] Total Distance Heuristic
 
 ---
 

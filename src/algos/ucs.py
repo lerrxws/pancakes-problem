@@ -1,7 +1,9 @@
-from src.pancakes_fuctions import is_solved, make_move
+from typing import Optional
+from src.algo_functions import add_to_frontier, pop_frontier, get_all_possible_moves, is_visited, add_visited
+from src.pancakes_fuctions import is_solved
 
 
-def ucs_solve(start_state: list[int], goal_state: list[int]):
+def ucs_solve(start_state: list[int], goal_state: list[int]) -> Optional[tuple[int, list[int], list[int]]]:
     frontier: list[tuple[int, list[int], list[int]]] = []
     visited: list[list[int]] = []
 
@@ -15,6 +17,7 @@ def ucs_solve(start_state: list[int], goal_state: list[int]):
 
         if is_visited(current_state, visited):
             continue
+        add_visited(current_state, visited)
 
         possible_moves: list[tuple[int, list[int], list[int]]] = get_all_possible_moves(current_state)
         for ps in possible_moves:
@@ -22,31 +25,3 @@ def ucs_solve(start_state: list[int], goal_state: list[int]):
                 frontier = add_to_frontier(frontier, ps)
 
     return None
-
-
-def add_to_frontier(frontier: list[tuple[int, list[int], list[int]]], state: tuple[int, list[int], list[int]]):
-    new_frontier = []
-    index = len(frontier)
-    for i in range(len(frontier)):
-        if state[0] < frontier[i][0]:
-            index = i
-            break
-
-    new_frontier = frontier[:index] + [state] + frontier[index:]
-    return new_frontier
-
-def pop_frontier(frontier: list[tuple[int, list[int], list[int]]]) -> tuple[int, list[int], list[int]]:
-    return frontier.pop(0)
-
-def is_visited(state: tuple[int, list[int], list[int]], visited: list[list[int]]) -> bool:
-    return state[1] in visited
-
-def get_all_possible_moves(state: tuple[int, list[int], list[int]]) -> list[tuple[int, list[int], list[int]]]:
-    possible_moves: list[tuple[int, list[int], list[int]]] = []
-    s = state[1]
-    for k in range(2, len(state[1]) + 1):
-        ns = make_move(s, k)
-        new_state: tuple[int, list[int], list[int]] = (state[0] + k, ns, state[2] + [k])
-        possible_moves.append(new_state)
-
-    return possible_moves
