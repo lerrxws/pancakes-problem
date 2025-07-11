@@ -27,8 +27,8 @@ Metrics to compare:
 - [ ] Metrics and Evaluation
 
 #### 2.2 A* Search
-- [ ] Implement A* for the pancake sorting problem.
-- [ ] Heuristics
+- [x] Implement A* for the pancake sorting problem.
+- [x] Heuristics
 - [ ] Metrics and Evaluation
 
 #### 2.3 Greedy Search
