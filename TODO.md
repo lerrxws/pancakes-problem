@@ -15,7 +15,7 @@ Metrics to compare:
 ## Tasks
 
 ### 1. **Input Setup**
-- [ ] Allow the user to define an initial pancake stack (e.g., `[4, 3, 2, 1]` or randomly generated).
+- [x] Allow the user to define an initial pancake stack (e.g., `[4, 3, 2, 1]` or randomly generated).
 - [x] Implement a function to verify if a stack is sorted.
 
 ---
